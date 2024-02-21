@@ -1,4 +1,4 @@
-package org.example.security;
+package org.example.advice;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

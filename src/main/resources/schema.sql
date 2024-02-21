@@ -13,8 +13,9 @@ CREATE TABLE users (
    password VARCHAR(20) NOT NULL
 );
 
-
-INSERT INTO products VALUES('834e142e-0ef0-43c6-a4b3-d56a15ed3bf6', 'Product Description 1','https://magecomp.com/blog/wp-content/uploads/2018/05/How-to-Get-Product-Image-URL-in-Magento-2-1024x512.png','Product Name 1',1000,10)
+INSERT INTO users VALUES('834e142e-0ef0-43c6-a4b3-d56b15ed3bf6', 'sainik', 'sainik@gmail.com');
+INSERT INTO products VALUES('834e142e-0ef0-43c6-a4b3-d56a15ed3bf6', 'Product Description 1','https://magecomp.com/blog/wp-content/uploads/2018/05/How-to-Get-Product-Image-URL-in-Magento-2-1024x512.png','Product Name 1',1000,10);
+commit;
 --INSERT INTO products
 --VALUES('834e142e-0ef0-43c6-a4b3-d56a15ed3bf9', 'Product Description 2','https://magecomp.com/blog/wp-content/uploads/2018/05/How-to-Get-Product-Image-URL-in-Magento-2-1024x512.png','Product Name 2',900,10)
 --INSERT INTO products

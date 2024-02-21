@@ -3,7 +3,7 @@
 
 ## create databases
 
-Here I am using mysql as database
+Here I am using H2 as database (To avoid installing mysql)
 
 1. table 1 
 user_id | user_name | password
