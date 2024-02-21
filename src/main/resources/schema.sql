@@ -4,7 +4,8 @@ CREATE TABLE products (
    image VARCHAR(200) NOT NULL,
    desc VARCHAR(20) NOT NULL,
    price VARCHAR(20) NOT NULL,
-   quantity INT NOT NULL
+   quantity INT NOT NULL,
+   strip_price VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE users (
@@ -14,7 +15,7 @@ CREATE TABLE users (
 );
 
 INSERT INTO users VALUES('834e142e-0ef0-43c6-a4b3-d56b15ed3bf6', 'sainik', 'sainik@gmail.com');
-INSERT INTO products VALUES('834e142e-0ef0-43c6-a4b3-d56a15ed3bf6', 'Product Description 1','https://magecomp.com/blog/wp-content/uploads/2018/05/How-to-Get-Product-Image-URL-in-Magento-2-1024x512.png','Product Name 1',1000,10);
+INSERT INTO products VALUES('834e142e-0ef0-43c6-a4b3-d56a15ed3bf6', 'Product Description 1','https://magecomp.com/blog/wp-content/uploads/2018/05/How-to-Get-Product-Image-URL-in-Magento-2-1024x512.png','Product Name 1',1000,10, 'price_1Om91TSClqH6NSAjBRSyUKUl');
 commit;
 --INSERT INTO products
 --VALUES('834e142e-0ef0-43c6-a4b3-d56a15ed3bf9', 'Product Description 2','https://magecomp.com/blog/wp-content/uploads/2018/05/How-to-Get-Product-Image-URL-in-Magento-2-1024x512.png','Product Name 2',900,10)

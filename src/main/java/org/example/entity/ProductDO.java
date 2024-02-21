@@ -29,4 +29,6 @@ public class ProductDO {
     private double price;
     @Column(name = "quantity")
     private int quantity;
+    @Column(name = "strip_price")
+    private String stripPrice;
 }

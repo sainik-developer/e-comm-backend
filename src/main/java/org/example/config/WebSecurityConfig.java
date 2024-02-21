@@ -30,7 +30,7 @@ public class WebSecurityConfig  {
     @Bean
     @Order(1)
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http.csrf().disable().cors().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .securityMatcher("/api/stripe/create-checkout-session").authorizeHttpRequests().anyRequest().authenticated()
