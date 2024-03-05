@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface ProductRepository extends CrudRepository<ProductDO, UUID> {
@@ -13,7 +14,7 @@ public interface ProductRepository extends CrudRepository<ProductDO, UUID> {
     @Query("SELECT p FROM products p WHERE p.quantity > 1")
     List<ProductDO> findAvailableProduct();
 
-    ProductDO findById(String id);
+    Optional<ProductDO> findById(UUID id);
 
 
 

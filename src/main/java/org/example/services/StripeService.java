@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -29,7 +31,7 @@ public class StripeService {
     }
 
     public Session checkOut(List<String> productIds) throws StripeException {
-        List<ProductDO> productDOS = productIds.stream().map(productRepository::findById).toList();
+        List<ProductDO> productDOS = productIds.stream().map(UUID::fromString).map(productRepository::findById).filter(Optional::isPresent).map(Optional::get).toList();
         List<SessionCreateParams.LineItem> lineItems = productDOS.stream().map(productDO -> SessionCreateParams.LineItem.builder()
                 .setPrice(productDO.getStripPrice()).setQuantity(1L).build()).toList();
         SessionCreateParams params = SessionCreateParams.builder()

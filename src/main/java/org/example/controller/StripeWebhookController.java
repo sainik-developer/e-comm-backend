@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+import java.util.UUID;
+
 @Log
 @RestController
 @RequiredArgsConstructor
@@ -18,11 +21,11 @@ public class StripeWebhookController {
     @PostMapping("/webhook")
     public void webhook(@RequestBody String payload) {
         log.info(payload);
-        ProductDO productDO = productRepository.findById("");
-        if (productDO != null) {
+        Optional<ProductDO> productDOOps = productRepository.findById(UUID.fromString(""));
+        if (productDOOps.isPresent()) {
+            ProductDO productDO = productDOOps.get();
             productDO.setQuantity(productDO.getQuantity() - 1);
             productRepository.save(productDO);
         }
-
     }
 }
